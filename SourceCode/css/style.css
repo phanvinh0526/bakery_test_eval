@@ -37,7 +37,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: #a5a5a5;
     overflow-x: hidden !important;
     overflow-y: auto !important;
@@ -79,7 +79,7 @@ h4 {
     font-size: 1.25rem;
 }
 h5{
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 h6{
     font-size: 0.875rem;
@@ -88,7 +88,7 @@ p{
    font-size: 14px;
 }
 p.title {
-   font-size: 1rem;
+   font-size: 1.125rem;
 }
 .block{
     display: block;
@@ -435,7 +435,7 @@ ul.social-icons li a {
    font-size: 17px;
    -webkit-border-radius: 50%;
    border-radius: 50%;
-   margin: 0 0.1rem;
+   margin: 0 0.1.125rem;
    text-align: center;
    display: block;
    color: #676767;
@@ -485,7 +485,7 @@ ul.social-icons.white li a:focus{
    position: relative;
    display: inline-block;
    font-size: 13px;
-   padding: 1rem 2.5rem;
+   padding: 1.125rem 2.5rem;
    line-height: 1;
    text-transform: uppercase;
    text-align: center;
@@ -620,8 +620,8 @@ i::before,i::after{
    z-index: 1000;
 }
 .center-brand {
-   padding-top: 1rem;
-   padding-bottom: 1rem;
+   padding-top: 1.125rem;
+   padding-bottom: 1.125rem;
 }
 .center-brand, .transparent-bg {
 	left: 0;
@@ -1072,7 +1072,7 @@ i::before,i::after{
 	transition: all .3s linear;
 	width: 36px;
 	padding: 6px;
-	margin-right: 1rem;
+	margin-right: 1.125rem;
 	position: absolute;
 	right: 15px;
 }
@@ -1345,7 +1345,7 @@ i::before,i::after{
    .navbar.sidebar-nav {
       width: 100%;
       height: auto;
-      padding: 0 1rem;
+      padding: 0 1.125rem;
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -1505,7 +1505,7 @@ i::before,i::after{
 }
 #services-slider .service-box{
    position: relative;
-   padding: 3rem 1rem;
+   padding: 3rem 1.125rem;
    background: #00bcd4;
    color: #fff;
    text-align: center;
@@ -1558,7 +1558,7 @@ i::before,i::after{
 }
 #services-slider .owl-item.center .service-box {
    background: #643094;
-   padding: 4.5rem 1rem;
+   padding: 4.5rem 1.125rem;
    margin-top: -25px;
 }
 #services-slider .service-box:hover::before {
@@ -1821,7 +1821,7 @@ i::before,i::after{
 /*process with box */
 .process-number {
    background: #fff;
-   padding: 0 1rem 2.5rem 1rem;
+   padding: 0 1.125rem 2.5rem 1.125rem;
    position: relative;
    text-align: center;
    -webkit-border-radius: 5px;
@@ -1871,7 +1871,7 @@ i::before,i::after{
 
 /*Process icoin inside*/
 .process-number.iconic {
-   padding: 2.5rem 1rem;
+   padding: 2.5rem 1.125rem;
 }
 .process-number.iconic > span {
 	height: 90px;
@@ -2744,7 +2744,7 @@ i::before,i::after{
    vertical-align: middle;
 }
 .price-table .ammount .dur {
-	font-size: 1rem;
+	font-size: 1.125rem;
 	color: #545661;
 	margin-top: 10px;
 }
@@ -3705,7 +3705,7 @@ textarea:-ms-input-placeholder {
    background: #fff;
    -webkit-border-radius: 10px;
    border-radius: 10px;
-   padding: 2.5rem 1rem;
+   padding: 2.5rem 1.125rem;
 }
 .btc-calcus .cal-convertor .ccc-widget.ccc-converter > div:first-child {
 	border: none !important;
@@ -4119,7 +4119,7 @@ footer .copyrights > a:focus {
       font-size: 14px;
    }
    .heading-title > span{
-      font-size: 1rem;
+      font-size: 1.125rem;
    }
 }
 
@@ -4134,3 +4134,57 @@ html{
         font-size: 12px;
     }
 }
+
+
+/* Loader */
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: none;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }

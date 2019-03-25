@@ -4,8 +4,11 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>XeOne</title>
-<link href="images/favicon.png" rel="icon">
+<title>RUBIX - Bakery Tech Eval</title>
+<!-- <link href="images/favicon.png" rel="icon"> -->
+
+<!-- Bootstrap 4.0 -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
 <!--Plugins css-->
 <link rel="stylesheet" href="css/plugins.css">
@@ -17,6 +20,9 @@
 
 
 <link href="css/prism.css" rel="stylesheet" />
+
+<link href="custom_style.css" rel="stylesheet" />
+
 
 </head>
 <body  data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -66,11 +72,8 @@
                   <a class="nav-link active" href="#home-section">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link active" href="#data-section">Dataset</a>
+                  <a class="nav-link" href="#result-section">Result</a>
                </li>
-               <!-- <li class="nav-item">
-                  <a class="nav-link" href="#architecture">Architecture</a>
-               </li> -->
                <li class="nav-item">
                   <a class="nav-link" href="#code-js">Javascript</a>
                </li>
@@ -100,11 +103,8 @@
                   <a class="nav-link" href="#home-section">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#data-section">Dataset</a>
+                  <a class="nav-link active" href="#result-section">Result</a>
                </li>
-               <!-- <li class="nav-item">
-                  <a class="nav-link" href="#architecture">Architecture</a>
-               </li> -->
                <li class="nav-item">
                   <a class="nav-link" href="#code-js">Javascript</a>
                </li>
@@ -132,151 +132,192 @@
 </header>
 <!-- header -->
 
+<!-- ************************************************************************** -->
+<!-- ************************************************************************** -->
+<!-- *******************************    BODY     ****************************** -->
+<!-- ************************************************************************** -->
+<!-- ************************************************************************** -->
 
-<!--Main Banner-->
-<!-- <section class="rotating-words full-screen center-block"> -->
-  <!-- padding gradient_bg_default -->
-  <section class="padding gradient_bg_default" id="home-section">
-   <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-2 text-center center-item">
-            <h3 class="text-capitalize font-xlight top50 bottom35  whitecolor wow fadeInUp" 
-              style="font-family: 'Abel', sans-serif;" data-wow-delay="400ms">Samples</h3>
-            <hr style="color: white; width: solid 2px">
-            <a id="data-vs" style="color: white" class="button btnsecondary wow fadeInUp" data-wow-delay="500ms">Vegemite Scroll</a>
-            <a id="data-mb" style="color: white" class="button btnsecondary wow fadeInUp" data-wow-delay="600ms">Blueberry Muffin</a>
-            <a id="data-cf" style="color: white" class="button btnsecondary wow fadeInUp" data-wow-delay="700ms">Croissant</a>
-        </div>
-        <div class="col-md-9 col-sm-10 text-center center-item">
-          <h3 class="text-capitalize font-xlight top50 bottom35  whitecolor wow fadeInUp" 
-            style="font-family: 'Abel', sans-serif;" data-wow-delay="400ms">Algorithm Output</h3>
-          <table id="table-render" class="table table-hover table-bordered" 
-                    style="color: white;font-weight: 500; display: none">
-              <thead>
-                <tr class="table-dark" style="border-width: 3px !important;">
-                  <th scope="col">Packs Type</th>
-                  <th scope="col">Cost/Pack</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Costs</th>
-                </tr>
-              </thead>
-              <tbody id="table-replacement">
-                <tr>
-                  <th scope="row">8</th>
-                  <td>$24.95</td>
-                  <td>1</td>
-                  <td>$24.95</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>$9.95</td>
-                  <td>3</td>
-                  <td>$29.85</td>
-                </tr>
-                <tr>
-                  <td colspan="3">Total Costs</td>
-                  <td>$112.21</td>
-                </tr>
-              </tbody>
-            </table>
+<!-- ---------------- Version 0.2 ---------------- -->
+<section class="padding gradient_bg_default" id="home-section">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-12 col-sm-12 col-md-offset-2">
+        <h2 class="text-capitalize font-xlight bottom35  whitecolor wow fadeInUp" 
+             style="font-family: 'Abel', sans-serif;" data-wow-delay="400ms">Product Order</h2>
+        <hr style="border: none; background-color: white; height: 2px">
+
+        <!-- Select a product to add to the order -->
+      <div class="top50 bottom35"  data-wow-delay="450ms">
+       <h4 class="text-capitalize font-xlight  bottom20  whitecolor wow fadeInUp" 
+             style="font-family: 'Abel', sans-serif;">Select an item to add to the order</h4>
+        <select class="custom-select" id="select-item">
+          <option value="-1" selected>Please select....</option>
+          <option value="VS5">VS5 - Vegemite Scroll</option>
+          <option value="MB11">MB11 - Blueberry Muffin</option>
+          <option value="CF">CF - Croissant</option>
+        </select>
 
         </div>
+        <!-- /Select a product to add to the order -->
 
-      </div>
-   </div>
+        <!-- Enter quatity -->
+        <div class="top50 bottom35" data-wow-delay="450ms">
+        <h5 class="text-capitalize font-xlight bottom20  whitecolor wow fadeInUp" 
+              style="font-family: 'Abel', sans-serif;" >Enter Quantity</h5>
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+              <!-- Number input -->
+              <input id="select-quantity" placeholder="Enter a number" required type="number" value="0" min="0" max="10000"/>
+              <!-- /Number input -->
+          </div>
+          <div class="col-md-4 col-sm-4">
+              <button id="select-btn-add" type="button" class="btn btn-danger" style="min-width: 300px;">
+              Add item to the order
+          </button>
+          </div>
+        </div>
+        </div>
+        <!-- /Enter quatity -->
+
+        <!-- Selected items & its quantity table -->
+        <div class="top50 bottom35">
+        <table id="selected-table" class="table table-hover table-bordered" 
+                    style="color: white;font-weight: 500;">
+          <tr class="table-dark" style="border-width: 3px !important;">
+              <th scope="col">Product Name</th>
+              <th scope="col">Code</th>
+              <th scope="col">Quantity</th>
+              <th scope="col" style="text-align: center">Delete</th>
+          </tr>
+        </table>
+        </div>
+        <!--/Selected items & its quantity table -->
+
+        <!-- Submit Order -->
+        <div class="top50 bottom35">
+        <button id="btn-submit-order" 
+          type="button" class="btn btn-danger"
+          style="min-width: 300px; min-height: 50px; float: right; color: white;">
+            Submit Order
+        </button>
+        </div>
+        <!-- /Submit Order -->
+
+    </div>
+  </div>
+  </div>
 </section>
 <!--Main Banner ends-->  
   
-<!--Bakery Products -->  
-<section id="data-section" class="padding single-feature">
-   <div class="container">
-      <div class="row ">
-         <div class="col-md-12 col-sm-12 text-center center-item">
-        <h3 class="text-capitalize top50 bottom35 wow fadeInUp" data-wow-delay="400ms"
-          style="font-family: 'Pacifico', cursive;">Bakery Products</h3>
-         <table class="table table-bordered" style="color: black">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product</th>
-                <th scope="col">Code</th>
-                <th scope="col">Packs</th>
-                <th scope="col">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Vegemite Scroll</td>
-                <td>VS5</td>
-                <td>5</td>
-                <td>$8.99</td>
-              </tr>
-              <tr>
-                  <th scope="row">2</th>
-                <td>Vegemite Scroll</td>
-                <td>VS5</td>
-                <td>3</td>
-                <td>$6.99</td>
-              </tr>
-              <tr>
-                  <th scope="row">3</th>
-                <td>Blueberry Muffin</td>
-                <td>MB11</td>
-                <td>8</td>
-                <td>$24.95</td>
-              </tr>
-              <tr>
-                  <th scope="row">4</th>
-                <td>Blueberry Muffin</td>
-                <td>MB11</td>
-                <td>5</td>
-                <td>$16.95</td>
-              </tr>
-              <tr>
-                  <th scope="row">5</th>
-                  <td >Blueberry Muffin</td>
-                  <td>MB11</td>
-                  <td>2</td>
-                  <td>$9.95</td>
-              </tr>
-              <tr>
-                  <th scope="row">6</th>
-                  <td >Croissant</td>
-                  <td>CF</td>
-                  <td>9</td>
-                  <td>$16.99</td>
-              </tr>
-              <tr>
-                  <th scope="row">7</th>
-                  <td >Croissant</td>
-                  <td>CF</td>
-                  <td>5</td>
-                  <td>$9.95</td>
-              </tr>
-              <tr>
-                  <th scope="row">8</th>
-                  <td >Croissant</td>
-                  <td>CF</td>
-                  <td>3</td>
-                  <td>$5.95</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
+<!--Order Result -->  
+<section id="result-section" class="padding single-feature">
+    <div class="container">
+      <!-- Result -->
+      <div class="row ">
+          <div class="col-md-12 col-sm-12 text-center center-item">
+          <h3 class="text-capitalize text-danger top50 bottom35 wow fadeInUp" data-wow-delay="400ms"
+            style="font-family: 'Pacifico', cursive;">Order Confirmation</h3>
+          <table id="table-result" class="table table-hover table-bordered" style="color: black">
+            <tr class="text-success">
+              <th scope="col">Item</th>
+              <th scope="col">Code</th>
+              <th scope="col">Pack</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Sub Total</th>
+            </tr>
+          </table>
+          <h5 id="table-error" class="text-capitalize text-danger top20 bottom35" 
+                  style="display: none; float: right;"></h5>
+          </div>
       </div>
-   </div>
+      <!-- /Result -->
+      <hr style="border: none; background-color: gray; height: 2px">
+      
+      <!--Bakery Products -->  
+      <div class="row ">
+          <div class="col-md-12 col-sm-12 text-center center-item">
+         <h3 class="text-capitalize top50 bottom35 wow fadeInUp" data-wow-delay="500ms"
+           style="font-family: 'Pacifico', cursive;">Bakery Products</h3>
+          <table class="table table-bordered" style="color: black">
+             <thead>
+               <tr>
+                 <th scope="col">#</th>
+                 <th scope="col">Product</th>
+                 <th scope="col">Code</th>
+                 <th scope="col">Packs</th>
+                 <th scope="col">Price</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <th scope="row">1</th>
+                 <td>Vegemite Scroll</td>
+                 <td>VS5</td>
+                 <td>5</td>
+                 <td>$8.99</td>
+               </tr>
+               <tr>
+                   <th scope="row">2</th>
+                 <td>Vegemite Scroll</td>
+                 <td>VS5</td>
+                 <td>3</td>
+                 <td>$6.99</td>
+               </tr>
+               <tr>
+                   <th scope="row">3</th>
+                 <td>Blueberry Muffin</td>
+                 <td>MB11</td>
+                 <td>8</td>
+                 <td>$24.95</td>
+               </tr>
+               <tr>
+                   <th scope="row">4</th>
+                 <td>Blueberry Muffin</td>
+                 <td>MB11</td>
+                 <td>5</td>
+                 <td>$16.95</td>
+               </tr>
+               <tr>
+                   <th scope="row">5</th>
+                   <td >Blueberry Muffin</td>
+                   <td>MB11</td>
+                   <td>2</td>
+                   <td>$9.95</td>
+               </tr>
+               <tr>
+                   <th scope="row">6</th>
+                   <td >Croissant</td>
+                   <td>CF</td>
+                   <td>9</td>
+                   <td>$16.99</td>
+               </tr>
+               <tr>
+                   <th scope="row">7</th>
+                   <td >Croissant</td>
+                   <td>CF</td>
+                   <td>5</td>
+                   <td>$9.95</td>
+               </tr>
+               <tr>
+                   <th scope="row">8</th>
+                   <td >Croissant</td>
+                   <td>CF</td>
+                   <td>3</td>
+                   <td>$5.95</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+ 
+       </div>
+    </div>
 </section>
-<!--Bakery Products ends-->          
-   
-<!-- Architecture-->  
-<!-- <section id="architecture" class="padding gradient_bg_default">
-   <div class="container">
-   </div>
-</section> -->
-<!--Architecture ends-->
-   
+<!-- /Order Result -->
+
+
 <!-- Javascript Sr-->  
 <section id="code-js" class="padding gradient_bg_default">
     <div class="container">
@@ -523,6 +564,10 @@
 <!--Bootstrap Core-->
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-input-spinner.js"></script>
+<script>
+    $("input[type='number']").inputSpinner()
+</script>
 
 <!--to view items on reach-->
 <script src="js/jquery.appear.js"></script>
@@ -556,28 +601,19 @@
   
 <!--WOw animations-->
 <script src="js/wow.min.js"></script>
-            
-<!--Revolution SLider-->
-<!-- <script src="js/revolution/jquery.themepunch.tools.min.js"></script>
-<script src="js/revolution/jquery.themepunch.revolution.min.js"></script> -->
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<!-- <script src="js/revolution/extensions/revolution.extension.actions.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.carousel.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.migration.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.navigation.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.parallax.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="js/revolution/extensions/revolution.extension.video.min.js"></script> -->
 
+<!-- Theme default functions -->
 <script src="js/prism.js"></script>
-
-<!--Google Map API-->
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_egfOLjahHB0IWpykRZrVFD8fN4JMgmw"></script> -->
 <script src="js/functions.js"></script>
 
-<script src="Rubix_Bakery_Packs_Optimisation.js"></script>
+
+
+<!-- ****************************************************** -->
+<!-- Customized JS files -->
+<script src="index_controller.js"></script>
+<script src="bakery_order_process.js"></script>
+<!-- /Customized JS files -->
+
 
 </body>
 </html>
